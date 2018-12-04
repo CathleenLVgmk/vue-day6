@@ -1,0 +1,58 @@
+@import "_mixin.scss";
+@import "common.scss";
+.wrap {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+    @include direction(column);
+}
+
+.tabs {
+    width: 100%;
+    height: pxTorem(44px);
+    @include box_flex;
+    padding: 0 pxTorem(10px);
+    li {
+        height: 100%;
+        @include flex;
+        @include box_flex;
+        @include align;
+        @include justify(center);
+        a {
+            width: 60%;
+            display: block;
+            height: 100%;
+            line-height: pxTorem(44px);
+            text-align: center;
+            color: #ccc;
+            font-size: pxTorem(16px);
+        }
+    }
+    li.active {
+        a {
+            border-bottom: blue solid pxTorem(1px);
+            color: blue;
+        }
+    }
+}
+
+.cont {
+    width: 100%;
+    @include flex;
+    overflow: hidden;
+    >div {
+        width: 100%;
+        height: 100%;
+    }
+    >div:first-child {
+        padding: 0 pxTorem(15px);
+        ul {
+            width: 100%;
+            height: 100%;
+            li {
+                width: 100%;
+                height: pxTorem(60px);
+            }
+        }
+    }
+}
